@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTable } from '@angular/material/table';
 import { PeriodicElement } from 'src/app/models/PeriodicElement';
-import { PeriodicElementService } from 'src/app/services/periodicElement.service';
+import { PeriodicElementService } from 'src/app/services/periodicelement.service';
 import { ElementDialogComponent } from 'src/app/shared/element-dialog/element-dialog.component';
 
 @Component({
