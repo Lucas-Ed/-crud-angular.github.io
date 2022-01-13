@@ -73,10 +73,19 @@ export class HomeComponent implements OnInit {
     this.openDialog(element);
   }
 
-  deleteElement(position: number): void {
-    this.periodicElementService.deleteElement(position)
-      .subscribe(() => {
-        this.dataSource = this.dataSource.filter(p => p.id !== position);
-      });
+  deleteElement(): void {
+    this.periodicElementService.deleteElement(this.dataSource[0].id).subscribe(() => {
+      this.periodicElementService.showMessege('Excluído com sucesso!')
+    });
   }
+
+  //deleteElement(position: number): void {
+    //this.periodicElementService.deleteElement(position)
+      //.subscribe(() => {
+       // this.dataSource = this.dataSource.filter(p => p.id !== position);
+      //});
+  //}
 }
+
+
+ 

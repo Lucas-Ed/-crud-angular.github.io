@@ -5,6 +5,9 @@ import { PeriodicElement } from '../models/PeriodicElement';
 
 @Injectable()
 export class PeriodicElementService {
+  showMessege(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
   
   elementApiUrl = 'http://localhost:3001/Symbols';
 
@@ -21,8 +24,13 @@ export class PeriodicElementService {
   editElement(element: PeriodicElement): Observable<PeriodicElement> {
     return this.http.put<PeriodicElement>(this.elementApiUrl, element);
   }
-
-  deleteElement(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.elementApiUrl}?id=${id}`);
+  deleteElement(id: number):Observable<any>{
+    const url = `${this.elementApiUrl}/id=${id}`
+    return this.http.delete<PeriodicElement>(url);
   }
-}
+  
+  }
+  //deleteElement(id: number): Observable<any> {
+   // return this.http.delete<any>(`${this.elementApiUrl}?id=${id}`);
+ // }
+//}
